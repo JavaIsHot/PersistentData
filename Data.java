@@ -1,15 +1,17 @@
+package your.package.here;
+
 import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.NamespacedKey;
 import org.bukkit.persistence.PersistentDataType;
 
-public class Data {
+public class PlayerData {
     public static PersistentDataContainer getContainer(Player player) {
         return player.getPersistentDataContainer();
     }
 
     public static NamespacedKey key(String key) {
-        return new NamespacedKey(MainClass.instance, key.toLowercase()); // Replace MainClass.instance with your main class' instance
+        return new NamespacedKey(new YourPluginsMainClass(), key.toLowercase());
     }
 
     @SuppressWarnings("all")
@@ -33,6 +35,6 @@ public class Data {
     }
 
     public static void initiate(Player player) {
-        Data.setDouble(player, "exampleData", 0.0);
+        PlayerData.setDouble(player, "exampleData", 0.0);
     }
 }
