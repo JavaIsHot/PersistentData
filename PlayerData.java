@@ -9,7 +9,7 @@ public class PlayerData {
 	}
 
 	public static NamespacedKey key(Enum<?> key) {
-		return new NamespacedKey(new YourPluginMainClass(), key.toString().toLowercase());
+		return new NamespacedKey(new YourPluginMainClass(), key.toString().toLowerCase());
 	}
 
 	@SuppressWarnings("all")
